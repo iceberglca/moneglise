@@ -18,3 +18,29 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/eglises',[
+    'as'=>'eglises',
+    'uses'=>'EgliseController@lister_eglise'
+
+])->middleware('auth');
+Route::get('/save_eglise',[
+    'as'=>'save_eglise',
+    'uses'=>'EgliseController@save_eglise'
+
+])->middleware('auth');
+
+Route::get('/modifier_eglise/{id}',[
+    'as'=>'modifier_eglise',
+    'uses'=>'EgliseController@modifier_eglise'
+
+])->middleware('auth');
+Route::get('/supprimer_eglise/{id}',[
+    'as'=>'supprimer_eglise',
+    'uses'=>'EgliseController@supprimer_eglise'
+
+])->middleware('auth');
+Route::get('/update_eglise',[
+    'as'=>'update_eglise',
+    'uses'=>'EgliseController@update_eglise'
+
+])->middleware('auth');

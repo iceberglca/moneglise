@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - moneglise@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="moneglise">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="achat_eiffage"/>
+    <schema id="3" name="bdlogiscoop"/>
+    <schema id="4" name="church"/>
+    <schema id="5" name="db_pachat"/>
+    <schema id="6" name="information_schema"/>
+    <schema id="7" name="mysql"/>
+    <schema id="8" name="performance_schema"/>
+    <schema id="9" name="recolte"/>
+    <schema id="10" name="shareit"/>
+    <schema id="11" name="sys"/>
+    <schema id="12" name="woonishop"/>
+    <table id="13" parent="1" name="eglises"/>
+    <table id="14" parent="1" name="migrations"/>
+    <table id="15" parent="1" name="password_resets"/>
+    <table id="16" parent="1" name="users"/>
+    <table id="17" parent="1" name="fideles"/>
+    <column id="18" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="19" parent="13" name="sigle">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="13" name="libelle">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="13" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="22" parent="13" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="23" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="24" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="25" parent="14" name="migration">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="26" parent="14" name="batch">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="27" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="28" parent="15" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="29" parent="15" name="token">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="30" parent="15" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="31" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="32" parent="16" name="nom">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="33" parent="16" name="prenom">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="34" parent="16" name="slug">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="35" parent="16" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="16" name="email_verified_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="37" parent="16" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="38" parent="16" name="remember_token">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="39" parent="16" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="40" parent="16" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="41" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="42" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="43" parent="17" name="nom">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="44" parent="17" name="prenoms">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="45" parent="17" name="photo">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="17" name="datenais">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="47" parent="17" name="lieunaiss">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="48" parent="17" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="49" parent="17" name="contact">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="50" parent="17" name="contact2">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="17" name="sitmatrimonial">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="17" name="profession">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="17" name="nationalite">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="54" parent="17" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="55" parent="17" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="56" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
