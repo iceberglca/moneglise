@@ -22,7 +22,7 @@ $eglise = new Eglise();
         $eglise->sigle=$sigle;
         $eglise->libelle=$libelle;
         $eglise->save();
-        return redirect()->route('eglises')->with('success',"Eglise bien enregistrer");
+        return redirect()->route('eglises')->with('success',"Eglise bien enregistré");
     }
     public function update_eglise(Request $request){
         $parameters = $request->except(['_token']);

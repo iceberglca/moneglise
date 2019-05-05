@@ -58,19 +58,19 @@
                 </thead>
                 <tbody>
                 @foreach($eglises as $eglise )
-                <tr>
-                    <td> {{$eglise->id}}</td>
-                    <td>{{$eglise->sigle}}</td>
-                    <td>{{$eglise->libelle}}</td>
-                    <td>
-                        <a href="{{route('modifier_eglise',['id'=>$eglise->id])}}" data-toggle="modal">
-                            <i class=" fa fa-pencil"> modifier</i>
-                        </a>
-                        <a href="{{route('supprimer_eglise',['id'=>$eglise->id])}}" data-toggle="modal" >
-                            <i class=" fa fa-trash">Supprimer</i>
-                        </a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td> {{$eglise->id}}</td>
+                        <td>{{$eglise->sigle}}</td>
+                        <td>{{$eglise->libelle}}</td>
+                        <td>
+                            <a href="{{route('modifier_eglise',['id'=>$eglise->id])}}" data-toggle="modal">
+                                <i class=" fa fa-pencil"> modifier</i>
+                            </a>
+                            <a href="{{route('supprimer_eglise',['id'=>$eglise->id])}}" data-toggle="modal" >
+                                <i class=" fa fa-trash">Supprimer</i>
+                            </a>
+                        </td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>

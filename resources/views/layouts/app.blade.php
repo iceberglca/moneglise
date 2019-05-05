@@ -10,11 +10,17 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/font-awesome.min.css') }}">
+
+
     <link rel="stylesheet" href="{{ URL::asset('assets/css/normalize.css') }}">
+
+
     <link rel="stylesheet" href="{{ URL::asset('assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/lib/datatable/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/lib/datatable/buttons.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/flag-icon.min.css') }}">
@@ -23,6 +29,19 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/scss/style.css') }}">
     <link href="{{ URL::asset('assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="{{ URL::asset('css/jquery.fileupload.css') }}">
+
+
+
+    <script src="{{ URL::asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{URL::asset('assets/js/plugins.js')}}"></script>
+    <script src="{{URL::asset('assets/js/main.js')}}"></script>
+    <script src="{{URL::asset('js/popper.min.js')}}"></script>
+    <script src="{{ URL::asset('js/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('js/bootstrap-select.js')}}"></script>
+    <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
 
 </head>
 <body>
@@ -58,11 +77,11 @@
 
                 <h3 class="menu-title">Mes fidèles</h3><!-- /.menu-title -->
 
-                <li>
-                    <a href="#" > <i class="menu-icon fa fa-address-book"></i>Lister les fidèles</a>
+                <li @yield('fideles')>
+                    <a href="{{route('fideles')}}" > <i class="menu-icon fa fa-address-book"></i>Lister les fidèles</a>
                 </li>
-                <li>
-                    <a href="widgets.html"> <i class="menu-icon fa fa-address-book-O"></i>Ajouter un fidèle </a>
+                <li @yield('gestion_fidele')>
+                    <a href="{{route('gestion_fidele')}}"> <i class="menu-icon fa fa-address-book-O"></i>Ajouter un fidèle </a>
                 </li>
                 <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
@@ -122,10 +141,8 @@
     </div> <!-- .content -->
 </div><!-- /#right-panel -->
 
+
 <!-- Right Panel -->
-
-<script src="{{ URL::asset('js/jquery.min.js') }}"></script>
-
 
 </body>
 </html>

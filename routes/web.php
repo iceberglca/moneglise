@@ -44,3 +44,26 @@ Route::get('/update_eglise',[
     'uses'=>'EgliseController@update_eglise'
 
 ])->middleware('auth');
+
+//pour les fidels
+
+Route::get('/fideles',[
+    'as'=>'fideles',
+    'uses'=>'FideleController@lister_fideles'
+
+])->middleware('auth');
+Route::get('/gestion_fidele',[
+    'as'=>'gestion_fidele',
+    'uses'=>'FideleController@gestion_fidele'
+
+])->middleware('auth');
+Route::get('/test_picker',[
+    'as'=>'test_picker',
+    'uses'=>'FideleController@test_picker'
+
+])->middleware('auth');
+Route::get('/save_fidele',[
+    'as'=>'save_fidele',
+    'uses'=>'FideleController@save_fidele'
+
+])->middleware('auth');

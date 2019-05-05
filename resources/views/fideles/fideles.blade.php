@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('eglises')
+@section('fideles')
     style='background-color:rgba(0,0,0,0.3) !important; color:black important; pading-left:19px important!;'
 @endsection
 @section('content')
@@ -25,48 +25,41 @@
         </div>
     </div>
 
-
     <div class="row">
-        <div class="col-sm-6">
 
-            <form class="form-control" action="{{isset($eglise)? route('update_eglise'): route('save_eglise')}}">
-                @csrf
-                <div class="form-group ">
-                    <input type="hidden" value="{{isset($eglise)?$eglise->id:''}}" name="id"/>
-                    <label for="sigle">SIGLE :</label>
-                    <input type="text" class="form-control" id="sigle" name="sigle" placeholder="SIGLE" value="{{isset($eglise)? $eglise->sigle: ""}}" required>
-                </div>
-                <div class="form-group ">
-                    <label for="libelle">Libelle :</label>
-                    <input type="text" class="form-control" id="libelle" name="libelle" placeholder="SIGLE" value="{{isset($eglise)? $eglise->sigle: ""}}" required>
-                </div>
-                <div class="form-group ">
-                    <button class="btn-success">{{isset($eglise)? "MODIFIER": "ENREGISTRER"}}</button>
-                </div>
-            </form>
-
-        </div>
-        <div class="col-sm-6">
-            <table id="table_eglise"  class='table table-bordered table-striped  no-wrap responsive '>
+        <div class="col-sm-12">
+            <table id="table_fidele"  class='table table-bordered table-striped  no-wrap responsive '>
                 <thead>
                 <tr>
                     <th>id</th>
-                    <th>SIGLE</th>
-                    <th>LIBELLE</th>
+                    <th>PHOTO</th>
+                    <th>NOM</th>
+                    <th>PRENOMS</th>
+                    <th>CONTACT</th>
+                    <th>SITUATION MATREMONIAL</th>
+                    <th>PROFESSION</th>
+                    <th>NATIONALITE</th>
+                    <th>EGLISE</th>
                     <th>ACTION</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($eglises as $eglise )
+                @foreach($fideles as $fidele )
                     <tr>
-                        <td> {{$eglise->id}}</td>
-                        <td>{{$eglise->sigle}}</td>
-                        <td>{{$eglise->libelle}}</td>
+                        <td> {{$fidele->id}}</td>
+                        <td>{{$fidele->photo}}</td>
+                        <td>{{$fidele->nom}}</td>
+                        <td>{{$fidele->prenoms}}</td>
+                        <td>{{$fidele->email}} {{$fidele->contact."/".$fidele->contact2}}</td>
+                        <td>{{$fidele->sitmatrimonial}}</td>
+                        <td>{{$fidele->profession}}</td>
+                        <td>{{$fidele->nationalite}}</td>
+                        <td>{{$fidele->id_eglise}}</td>
                         <td>
-                            <a href="{{route('modifier_eglise',['id'=>$eglise->id])}}" data-toggle="modal">
+                            <a href="{{route('modifier_eglise',['id'=>$fidele->id])}}" data-toggle="modal">
                                 <i class=" fa fa-pencil"> modifier</i>
                             </a>
-                            <a href="{{route('supprimer_eglise',['id'=>$eglise->id])}}" data-toggle="modal" >
+                            <a href="{{route('supprimer_eglise',['id'=>$fidele->id])}}" data-toggle="modal" >
                                 <i class=" fa fa-trash">Supprimer</i>
                             </a>
                         </td>
@@ -77,10 +70,11 @@
         </div>
 
     </div>
+    <script src="{{ URL::asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/lib/data-table/datatables.min.js') }}"></script>
     <script>
         (function($) {
-            var table= $('#table_eglise').DataTable({
+            var table= $('#table_fidele').DataTable({
                 language: {
                     url: "{{ URL::asset('js/French.json') }}"
                 },
